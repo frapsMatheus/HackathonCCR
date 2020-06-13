@@ -1,15 +1,7 @@
-function addPointsToRank(rank_sender) {
-  //TODO: Add points to megarank for user
-  //TODO: add only if unick click
+function addClickToRow(id, sheet, numberOfClicks) {
   Logger.log(Session.getTemporaryActiveUserKey());
-}
-
-function addClickToRow(id, sheet, lastColumn, numberOfClicks) {
-	//TODO: Add clicks to analytics
-  //TODO: add only if unick click
-  Logger.log(Session.getTemporaryActiveUserKey());
-  sheet.getRange(id, lastColumn).setValue(numberOfClicks + 1);
-  
+  const clickColumn = sheet.getRange(id, 5);
+  clickColumn.setValue(numberOfClicks + 1);
 }
 
 function getParamsFromSheets(id) {
@@ -21,14 +13,14 @@ function getParamsFromSheets(id) {
   var data = dataRange.getValues();
   var row = data[0];
   
-  addClickToRow(id, sheet, numColumns, row[4]);
+  addClickToRow(id, sheet, row[4]);
   
   try {
     const url = row[1];
     const rankSender = row[2];
-    const name = row[3];
+    const driverName = row[3];
     
-    return `${url}?id=${id}%name=${name}`;      
+    return `${url}?sender_id=${id}&driver_name=${driverName}`;      
     
   } catch(err) {
     Logger.log(err);
@@ -41,6 +33,10 @@ function doGet(e) {
   //DONE: Read url
   const { parameter } = e;
   const { id } = parameter;
+  const REDIRECT_URL = getParamsFromSheets(id);
   
-  return HtmlService.createHtmlOutput(getParamsFromSheets(id));
+  return HtmlService.createHtmlOutput(
+    "<script>window.top.location.href=\"" + REDIRECT_URL + "\";</script>"
+  );
+  
 }

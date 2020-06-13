@@ -1,9 +1,9 @@
-var accountSid = 'SID';
-var authToken = 'AUTHTOKEN';
-var from = 'whatsapp:+14155238886';
-var templateMessage = "Your code is \n\n{{2}}";
-
 function Whatsapp(phone) {
+  var accountSid = 'ACCSID';
+  var authToken = 'AUTHTOKEN';
+  var from = 'whatsapp:+14155238886';
+  var templateMessage = "Your code is \n\n{{2}}";
+  
   return {
     sendSms(content) {
       var messages_url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
@@ -29,3 +29,4 @@ function Whatsapp(phone) {
     },
   };
 }
+

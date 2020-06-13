@@ -2,6 +2,8 @@ function addConversion(id) {
   const caminhoneiros = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Senders_URLS');
   const cell = caminhoneiros.getRange(id, 6);
   cell.setValue(cell.getValue() + 1);
+  const phone = caminhoneiros.getRange(id, 3).getValue();
+  NewCuponsMessage('Uma nova pessoa se cadastrou no NOME SOLUÇÃO usando o seu link. Isso rendeu 2 novos cupons de participação para você!', phone);
 }
 
 function getLatLng(location) {
@@ -36,16 +38,18 @@ function addCaminhoneiro(parameters) {
   const locationData = parameters['latlong_by_gps'][0];
   const { latitude, longitude } = getLatLng(locationData);
   
-  addConversion(parameters['sender_id'][0]);
+  if (parameters['sender_id']) {
+    addConversion(parameters['sender_id'][0]);
+  }
   
   const caminhoneiros = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Caminhoneiros');
   const id = caminhoneiros.getLastRow() + 1;
-  const url_rank = `=SUMIF(Senders_URLS!C:C,A${id},Senders_URLS!E:E) + 10 * SUMIF(Senders_URLS!C:C,A${id},Senders_URLS!F:F)`;
-  const mega_rank = `=SUM(I${id}:K${id})`;
+  const url_rank = `=10 + 2 * SUMIF(Senders_URLS!C:C,A${id},Senders_URLS!F:F)`;
+  const mega_rank = `=SUM(J${id}:L${id})`;
   
   
-  caminhoneiros.appendRow([phone, firstName, lastName, age, gender, locationData, latitude, longitude]);
-  const row = caminhoneiros.getRange(id, 9, 1, 4);
+  caminhoneiros.appendRow([phone, Date.now(), firstName, lastName, age, gender, locationData, latitude, longitude]);
+  const row = caminhoneiros.getRange(id, 10, 1, 4);
   row.setFormulas([[url_rank, '=1', '=1', mega_rank]]);
 }
 

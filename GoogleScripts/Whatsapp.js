@@ -8,45 +8,27 @@ module.exports = function (debug) {
   authToken = '5f22766bb752a6aa52a71a18850d87ca';
   from = 'whatsapp:+14155238886';
 
-  const twilioClient = require('twilio')(accountSid, authToken, {
-    lazyLoading: true
-  });
-
   function Whatsapp(phone) {
     return {
-      async sendMessage(content, file) {
-        try {
-          let message = {
-            from,
-            body: content,
-            to: `whatsapp:${phone}`
-          };
-          if (file) {
-            message.mediaUrl = [file];
-          }
-          console.log(message);
-          const twilioResponse = await twilioClient.messages.create(message);
-          console.log('SID:', twilioResponse.sid);
-          return twilioResponse.sid;
-        } catch (error) {
-          console.log('ERROR', error);
-          throw error;
-        }
-      },
-      async sendLocationMessage(content, latitude, longitude) {
-        try {
-          let message = {
-            from: 'whatsapp:+14155238886',
-            body: content,
-            to: `whatsapp:${phone}`
-          };
-          message.persistentAction = `geo:${latitude.toFixed(6)},${longitude.toFixed(6)}|${content}`;
-          const twilioResponse = await twilioClient.messages.create(message);
-          return twilioResponse.sid;
-        } catch (error) {
-          console.log(error);
-          throw error;
-        }
+      async sendSms(content) {
+        var messages_url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
+      
+        var payload = {
+          "To": `whatsapp:${phone}`,
+          "Body" : content,
+          "From" : from
+        };
+      
+        var options = {
+          "method" : "post",
+          "payload" : payload
+        };
+      
+        options.headers = { 
+          "Authorization" : "Basic " + Utilities.base64Encode(`${accountSid}:${authToken}`),
+        };
+      
+        UrlFetchApp.fetch(messages_url, options);
       },
     };
   }

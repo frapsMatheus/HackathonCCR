@@ -63,5 +63,3 @@ function TwillioMessage(message) {
     },
   };
 }
-
-module.exports = TwillioMessage;

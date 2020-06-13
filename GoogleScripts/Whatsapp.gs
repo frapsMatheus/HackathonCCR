@@ -1,5 +1,5 @@
-var accountSid = 'ACCOUNTSIDKEY';
-var authToken = 'AUTHKEY';
+var accountSid = 'SID';
+var authToken = 'AUTHTOKEN';
 var from = 'whatsapp:+14155238886';
 var templateMessage = "Your code is \n\n{{2}}";
 

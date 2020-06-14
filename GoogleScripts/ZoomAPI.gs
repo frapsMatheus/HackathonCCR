@@ -1,7 +1,7 @@
 function ZoomAPI(topic, startTime) {
   var userId = 'niteceuma@gmail.com';
   var url = 'https://api.zoom.us/v2/users/' + userId + '/meetings';
-  var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZaQ3ZERFotVHRxVDhHblI1STlhWEEiLCJleHAiOjE2MTY4MTQwMDAsImlhdCI6MTU4NTMxMTU2MX0.pxP388lpO-VM3hDyMMg6R0ag2zkdlebZZ3eZiY7PlQQ';
+  var token = 'TOKEN_ZOOM';
   var type = '2';
   var payload = '{"topic": "' + topic
   + '","type": "' + type

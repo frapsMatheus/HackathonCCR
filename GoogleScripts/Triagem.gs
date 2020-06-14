@@ -35,8 +35,17 @@ function TriagemView(phone) {
 }
 
 function Triagem(params) {
-  const phone = params.id[0];
-  Logger.log(params.humor[0]);
+  Logger.log(params);
+  //DONE: Adicionar conversão
+  if (params['sender_id']) {
+    const urlID = params['sender_id'][0];
+    Logger.log(urlID);
+    addConversion(urlID);
+  }
+  let phone = '';
+  if (params['phone[]']) {
+    phone = `55${params['phone[]'][0]}${params['phone[]'][1]}`;
+  }
   const humor = JSON.parse(params.humor[0]).widget_metadata.value[0].name;	
   const altura = params.altura[0];	
   const pesoaproximado = params.pesoaproximado[0];	
@@ -82,6 +91,9 @@ function Triagem(params) {
                      vocefez, qualcirurgia, sofredecoluna, fazacompanhamento, outroproblema, qualoutroproblema, tomamedicamento,
                     quaismedicamentos, problemasdentarios, alimentacao, contatodeemergencia, nomedeemergencia, quantahorassono, Date.now(), shortenedURL]);
   
-  //TODO: Mandar WPP com QRCOde
-  //TODO: Redirect para página para agendar um vídeo de telemedecina
+  //DONE: Mandar WPP com QRCOde
+  const triagemMessage = `MENSGAGEM DE TRIAGEM \n\n Para verificar seus dados acesse: ${shortenedURL}`;
+  NewCuponsMessage(triagemMessage, phone);
+  
+  return phone;
 }

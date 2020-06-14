@@ -4,10 +4,8 @@ function TriagemView(phone) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Triagem");   
   const numColumns = sheet.getLastColumn();
   const row = sheet.getRange(line, 1, 1, numColumns).getValues()[0];
-  
-  const qrCodeURL = `https://script.google.com/macros/s/AKfycbyP005C8wR_i1x08VLJ-AP_hMcdxupZ7IBaocJhFgnaDuW8OTs/exec?phone=${phone}&type=triagem`;
-  const shortenedURL = URLShortener(qrCodeURL);
-  const qrCODE = QRCodeAPI(shortenedURL);
+ 
+  const qrCODE = QRCodeAPI(row[22]);
   
   Logger.log(row);
   t.qrCodeURL = qrCODE;
@@ -74,10 +72,15 @@ function Triagem(params) {
     nomedeemergencia = `${params['nomedeemergencia[]'][0]} ${params['nomedeemergencia[]'][1]}`;
   }
   const quantahorassono = params.quantahorassono[0];
+  
+  const qrCodeURL = `https://script.google.com/macros/s/AKfycbyP005C8wR_i1x08VLJ-AP_hMcdxupZ7IBaocJhFgnaDuW8OTs/exec?phone=${phone}&type=triagem`;
+  const shortenedURL = URLShortener(qrCodeURL);
+  
+  
   const triagem = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Triagem');
   triagem.appendRow([phone, humor, altura, pesoaproximado, fazatividade, estagravida, voceja, algumparente,
                      vocefez, qualcirurgia, sofredecoluna, fazacompanhamento, outroproblema, qualoutroproblema, tomamedicamento,
-                    quaismedicamentos, problemasdentarios, alimentacao, contatodeemergencia, nomedeemergencia, quantahorassono]);
+                    quaismedicamentos, problemasdentarios, alimentacao, contatodeemergencia, nomedeemergencia, quantahorassono, Date.now(), shortenedURL]);
   
   //TODO: Mandar WPP com QRCOde
   //TODO: Redirect para página para agendar um vídeo de telemedecina

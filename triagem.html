@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta property="og:title" content="Exame de triagem" />
+    <meta property="og:description" content="Todos seus dados preenchidos durante a triagem para consulta." />
+    <meta property="og:image" itemprop="image" content=<?= qrCodeURL ?>>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+      <body style="background-color: #F3C342 !important;">
+        <div class="container">
+          <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="https://www.jotform.com/uploads/efremfilho/form_files/ccr.5ee52d541ac448.38373908.png" alt="CCR" width="144" height="144">
+            <h2>Informações do paciente:</h2>
+            <img class="d-block mx-auto mb-4" src=<?= qrCodeURL ?> alt="QRCode" width="72" height="72">
+          </div>
+
+      <div class="row">
+    <div class="col-md-8 order-md-1">
+      <form class="needs-validation" novalidate>
+        <hr class="mb-4">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName"><b>Telefone:</b></label>
+            <div><?= phone ?></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName"><b>Como está se sentindo?</b></label>
+            <div><?= humor ?></div>
+          </div>
+        </div>
+        
+        <hr class="mb-4">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName"><b>Altura aproximada: </b></label>
+            <div><?= altura ?></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="firstName"><b>Peso aproximado: </b></label>
+            <div><?= pesoaproximado ?></div>
+          </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="mb-3">
+          <label for="firstName"><b>Está gravida? </b></label>
+          <div><?= estagravida ?></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="firstName"><b>Faz alguma atividade física regularmente? </b></label>
+          <div><?= fazatividade ?></div>
+        </div>
+       
+        <div class="mb-3">
+          <label for="firstName"><b>Você já teve alguma dessas condições?:</b></label>
+          <div><?= voceja ?></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Algum parente de primeiro grau (mãe, pai, irmãos) possuem alguma dessas condições?: 
+          </b></label>
+          <div><?= algumparente ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Você fez cirurgia nos últimos 2 anos?
+          </b></label>
+          <div><?= vocefez ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Qual cirurgia?
+          </b></label>
+          <div><?= qualcirurgia ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Sofre de dores de coluna?
+          </b></label>
+          <div><?= sofredecoluna ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Faz um acompanhamento?
+          </b></label>
+          <div><?= fazacompanhamento ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Possui algum outro problema?
+          </b></label>
+          <div><?= outroproblema ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Qual outro problema?
+          </b></label>
+          <div><?= qualoutroproblema ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Toma algum medicamento?
+          </b></label>
+          <div><?= tomamedicamento ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Quais medicamentos?
+          </b></label>
+          <div><?= quaismedicamentos ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Você possui..: 
+          </b></label>
+          <div><?= problemasdentarios ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Como você classifica sua alimentação? 
+          </b></label>
+          <div><?= alimentacao ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Quanta horas você dorme em média?: 
+          </b></label>
+          <div><?= quantahorassono ?></div>
+        </div>
+
+        <hr class="mb-4">
+
+        
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Contato de emergência: 
+          </b></label>
+          <div><?= contatodeemergencia ?></div>
+        </div>
+        <div class="mb-3">
+          <label for="firstName"><b>
+            Nome de emergência: 
+          </b></label>
+          <div><?= nomedeemergencia ?></div>
+        </div>
+
+      </form>
+    </div>
+    </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      </body>
+</html>

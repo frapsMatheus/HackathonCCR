@@ -1,3 +1,11 @@
+function addZoomToTriagem(phone, zoomURL, start) {
+  //DONE: Add link + start to triagem
+  const rowPos = findRow('Triagem', phone, 1, 1)[0];
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Triagem");   
+  const row = sheet.getRange(rowPos, 24, 1, 2);
+  row.setValues([[start, zoomURL]]);
+}
+
 function TriagemView(phone) {
   let t = HtmlService.createTemplateFromFile('triagem');
   const line = findRow('Triagem', phone, 1, 1)[0];
@@ -40,11 +48,11 @@ function Triagem(params) {
   if (params['sender_id']) {
     const urlID = params['sender_id'][0];
     Logger.log(urlID);
-    addConversion(urlID);
+    addConversion(urlID, false);
   }
   let phone = '';
   if (params['phone[]']) {
-    phone = `55${params['phone[]'][0]}${params['phone[]'][1]}`;
+    phone = phoneFormat(params['phone[]']);
   }
   const humor = JSON.parse(params.humor[0]).widget_metadata.value[0].name;	
   const altura = params.altura[0];	
@@ -52,8 +60,8 @@ function Triagem(params) {
   const fazatividade = params.fazatividade[0];
   const estagravida = params.estagravida[0];	
   let voceja = '';
-  if (params['voceja[]']) {
-    voceja = params['voceja[]'].toString();
+  if (params['voceja76[]']) {
+    voceja = params['voceja76[]'].toString();
   }
   let algumparente = '';
   if (params['algumparente[]']) {
@@ -74,7 +82,7 @@ function Triagem(params) {
   const alimentacao = params.alimentacao[0];
   let contatodeemergencia = '';
   if (params['contatodeemergencia[]']) {
-    contatodeemergencia = `55${params['contatodeemergencia[]'][0]}${params['contatodeemergencia[]'][1]}`;
+    contatodeemergencia = phoneFormat(params['contatodeemergencia[]']);
   }
   let nomedeemergencia = '';
   if (params['nomedeemergencia[]']) {
@@ -92,7 +100,7 @@ function Triagem(params) {
                     quaismedicamentos, problemasdentarios, alimentacao, contatodeemergencia, nomedeemergencia, quantahorassono, Date.now(), shortenedURL]);
   
   //DONE: Mandar WPP com QRCOde
-  const triagemMessage = `MENSGAGEM DE TRIAGEM \n\n Para verificar seus dados acesse: ${shortenedURL}`;
+  const triagemMessage = `Essas foram suas respostas e esse é seu QR code, use-o em suas consultas presenciais em postos do Estrada pra Saúde\n ${shortenedURL}`;
   NewCuponsMessage(triagemMessage, phone);
   
   return phone;

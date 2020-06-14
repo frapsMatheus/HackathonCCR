@@ -24,7 +24,8 @@ function TriagemJob() {
     const user = {
       name: row[2],
       phone: row[0],
-    };
+    };    
+    simpleMessage(user.phone, 'Queremos saber mais sobre sua saúde, responda o formulário do link na próxima mensagem para *ganhar 15 cupons*. Você também vai ganhar 2 cupons para cada pessoa que responder usando o seu link. *Compartilhe*!');
     const userId = newMessage.addRow(user);
     newMessage.sendMessage(user, userId);
   });

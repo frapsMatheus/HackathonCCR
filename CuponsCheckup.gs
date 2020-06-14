@@ -13,5 +13,5 @@ function findRow(sheetName, idToSearch, columnFromId, columnToReturn){
 function NewCuponsMessage(message, phone) {
   const rank = findRow('Caminhoneiros', phone, 1, 12)[1];
   const wpp = Whatsapp(phone);
-  response_data = wpp.sendSms(`${message}\n\n Você possui ${rank} cupons para o próximo sorteio!`);
+  response_data = wpp.sendSms(`${message}\n\nVocê possui ${rank} cupons para o próximo sorteio!`);
 }

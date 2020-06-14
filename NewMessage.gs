@@ -11,9 +11,9 @@ function NewMessage(sheet, row) {
     return id;
   }
   
-  // TODO: Send Message
+  // DONE: Send Message
   function sendMessage(user, id) {
-    const url = 'https://script.google.com/macros/s/AKfycbyP005C8wR_i1x08VLJ-AP_hMcdxupZ7IBaocJhFgnaDuW8OTs/exec?id=${id}';
+    const url = `https://script.google.com/macros/s/AKfycbyP005C8wR_i1x08VLJ-AP_hMcdxupZ7IBaocJhFgnaDuW8OTs/exec?id=${id}`;
     const wpp = Whatsapp(user.phone);
     const content = `${message}\n${URLShortener(url)}`;
     Logger.log(user, id, content);
@@ -42,6 +42,11 @@ function NewMessage(sheet, row) {
       });
     },
     addRow,
-    sendMessage
+    sendMessage,
   };
+}
+
+function simpleMessage(phone, content) {
+  const wpp = Whatsapp(phone);
+  response_data = wpp.sendSms(content);
 }

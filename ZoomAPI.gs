@@ -1,7 +1,7 @@
 function ZoomAPI(topic, startTime) {
   var userId = 'niteceuma@gmail.com';
   var url = 'https://api.zoom.us/v2/users/' + userId + '/meetings';
-  var token = 'TOKEN_ZOOM';
+  var token = 'ZOOM_TOKEN';
   var type = '2';
   var payload = '{"topic": "' + topic
   + '","type": "' + type

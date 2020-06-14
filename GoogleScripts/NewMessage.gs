@@ -13,9 +13,9 @@ function NewMessage(sheet, row) {
   
   // TODO: Send Message
   function sendMessage(user, id) {
-    const url = 'https://script.google.com/macros/s/AKfycbyP005C8wR_i1x08VLJ-AP_hMcdxupZ7IBaocJhFgnaDuW8OTs/exec?id=';
+    const url = 'https://script.google.com/macros/s/AKfycbyP005C8wR_i1x08VLJ-AP_hMcdxupZ7IBaocJhFgnaDuW8OTs/exec?id=${id}';
     const wpp = Whatsapp(user.phone);
-    const content = `${message}\n${url}${id}`;
+    const content = `${message}\n${URLShortener(url)}`;
     Logger.log(user, id, content);
     response_data = wpp.sendSms(content);
   }

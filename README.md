@@ -1,5 +1,12 @@
 # Zap na Estrada
 
+<div align="center">
+  <img alt="Logo" title="#logo" width="300px" src="logo.png">
+  <br><br>
+</div>
+
+Partindo do princípio de que dos 87.7% dos caminhoneiros que usam a internet, 98.1% utilizam o Whatsapp, o Zap na Estrada surge para criar um clube de recomendação com prêmios. O Zap na estrada é um sistema de mensageria com diversos serviços integrados, utilizando como banco de dados o Google Spreadsheet e arquivos auxiliares do Google Scripts para _side-effects_. Os arquivos do Google Scripts são baseados em Javascript.
+
 # Índice
 
 - [Sobre](#sobre)

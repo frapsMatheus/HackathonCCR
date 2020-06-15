@@ -10,7 +10,7 @@ Ao marcar a consulta, o sistema da YouCanBookMe dispara um POST request para o n
 
 ## Banco de dados
 
-Como descrito, nosso banco de dados foi desenvolvido utilizando uma planilha do Google Spreadsheets. O link para a planilha é https://docs.google.com/spreadsheets/d/1RBXWmCdWVsXg61Y7Co-0JK9ev876LGKNN1w4df9H9DY/edit?usp=sharing.
+Como descrito, nosso banco de dados foi desenvolvido utilizando uma planilha do Google Spreadsheets. O link para a planilha é [https://rel.ink/nO3XBE](https://rel.ink/nO3XBE).
 
 ## Dashboard
 

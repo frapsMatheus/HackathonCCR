@@ -5,7 +5,7 @@
   <br><br>
 </div>
 
-Partindo do princípio de que dos 87.7% dos caminhoneiros que usam a internet, 98.1% utilizam o Whatsapp, o Zap na Estrada surge para criar um clube de recomendação com prêmios. O Zap na estrada é um sistema de mensageria com diversos serviços integrados, utilizando como banco de dados o Google Spreadsheet e arquivos auxiliares do Google Scripts para _side-effects_. Os arquivos do Google Scripts são baseados em Javascript.
+Saúde e bem-estar por meio da dinâmica de comunidade para criar o maior canal de comunicação com os caminhoneiros. O Zap na estrada é um sistema de mensageria com diversos serviços integrados, utilizando como banco de dados o Google Spreadsheet e arquivos auxiliares do Google Scripts para _side-effects_. Os arquivos do Google Scripts são baseados em Javascript.
 
 # Índice
 
@@ -20,8 +20,6 @@ Partindo do princípio de que dos 87.7% dos caminhoneiros que usam a internet, 9
 <a  id="sobre"></a>
 
 ## :bookmark: Sobre
-
-Partindo do princípio de que dos 87.7% dos caminhoneiros que usam a internet, 98.1% utilizam o Whatsapp, o Zap na Estrada surge para criar um clube de recomendação com prêmios. O Zap na estrada é um sistema de mensageria com diversos serviços integrados, utilizando como banco de dados o Google Spreadsheet e arquivos auxiliares do Google Scripts para _side-effects_. Os arquivos do Google Scripts são baseados em Javascript.
 
 O caminhoneiro se inscreve em um formulário construído com [JotForm](https://www.jotform.com/). Ao submeter os dados do formulário, o JotForm envia uma requisição para o nosso sistema, onde serão salvos as informações do caminhoneiro. A partir disso, disparamos uma mensagem utilizando o serviço de mensagens da [Twillio](https://www.twilio.com/). Essa mensagem contêm o link de compartilhamento desse caminhoneiro! Com esse link, ele pode enviar para seus contatos de profissão próximos fazendo com que ele ganhe cupons para concorrer a prêmios incríveis. Vale a pena ressaltar que para tornar o link mais amigável, foi utilizada a API da [Rel Ink](https://rel.ink/).
 

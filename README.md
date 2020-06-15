@@ -1,5 +1,19 @@
 # Zap na Estrada
 
+# Índice
+
+- [Sobre](#sobre)
+
+- [Tecnologias](#tecnologias-utilizadas)
+
+- [Arquivos](#arquivos)
+
+- [Serviços Integrados (APIs)](#apis)
+
+<a  id="sobre"></a>
+
+## :bookmark: Sobre
+
 Partindo do princípio de que dos 87.7% dos caminhoneiros que usam a internet, 98.1% utilizam o Whatsapp, o Zap na Estrada surge para criar um clube de recomendação com prêmios. O Zap na estrada é um sistema de mensageria com diversos serviços integrados, utilizando como banco de dados o Google Spreadsheet e arquivos auxiliares do Google Scripts para _side-effects_. Os arquivos do Google Scripts são baseados em Javascript.
 
 O caminhoneiro se inscreve em um formulário construído com [JotForm](https://www.jotform.com/). Ao submeter os dados do formulário, o JotForm envia uma requisição para o nosso sistema, onde serão salvos as informações do caminhoneiro. A partir disso, disparamos uma mensagem utilizando o serviço de mensagens da [Twillio](https://www.twilio.com/). Essa mensagem contêm o link de compartilhamento desse caminhoneiro! Com esse link, ele pode enviar para seus contatos de profissão próximos fazendo com que ele ganhe cupons para concorrer a prêmios incríveis. Vale a pena ressaltar que para tornar o link mais amigável, foi utilizada a API da [Rel Ink](https://rel.ink/).
@@ -8,15 +22,21 @@ Após a primeira interação do caminhoneiro com a plataforma, enviamos uma mens
 
 Ao marcar a consulta, o sistema da YouCanBookMe dispara um POST request para o nosso sistema, configurado a partir de um webhook, com o horário da consulta. Assim, conseguimos tratar o horário e agendar uma ligação no [Zoom](https://zoom.us/) para o usuário.
 
-## Banco de dados
+<a  id="tecnologias-utilizadas"></a>
+
+## :rocket: Tecnologias Utilizadas
+
+### Banco de dados
 
 Como descrito, nosso banco de dados foi desenvolvido utilizando uma planilha do Google Spreadsheets. O link para a planilha é https://docs.google.com/spreadsheets/d/1RBXWmCdWVsXg61Y7Co-0JK9ev876LGKNN1w4df9H9DY/edit?usp=sharing.
 
-## Dashboard
+### Dashboard
 
 Para compilarmos os dados e mostrarmos para tomados de decisão, criamos um app com dashboard para acompanhamento dos dados que são levantados a partir do preenchimento dos formulários de cadastro e triagem. Para acessar o app: [https://hackathon-ccr.glideapp.io/full](https://hackathon-ccr.glideapp.io/full)
 
-## Arquivos
+<a  id="arquivos"></a>
+
+## :pencil: Arquivos
 
 ### Whatsapp.gs
 
@@ -74,7 +94,9 @@ O URLShortener é uma classe responsável por fazer uma requisição para o serv
 
 QRCodeAPI retorna a URL da imagem do QRCode referente às informações colhidas no momento da triagem.
 
-## Serviços Integrados
+<a  id="apis"></a>
+
+## :wrench: Serviços Integrados
 
 ### Google Spreadsheets
 

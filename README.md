@@ -19,7 +19,7 @@ Saúde e bem-estar por meio da dinâmica de comunidade para criar o maior canal 
 
 <a  id="sobre"></a>
 
-## :bookmark: Sobre
+## :bookmark: - Sobre
 
 O caminhoneiro se inscreve em um formulário construído com [JotForm](https://www.jotform.com/). Ao submeter os dados do formulário, o JotForm envia uma requisição para o nosso sistema, onde serão salvos as informações do caminhoneiro. A partir disso, disparamos uma mensagem utilizando o serviço de mensagens da [Twillio](https://www.twilio.com/). Essa mensagem contêm o link de compartilhamento desse caminhoneiro! Com esse link, ele pode enviar para seus contatos de profissão próximos fazendo com que ele ganhe cupons para concorrer a prêmios incríveis. Vale a pena ressaltar que para tornar o link mais amigável, foi utilizada a API da [Rel Ink](https://rel.ink/).
 
@@ -29,7 +29,7 @@ Ao marcar a consulta, o sistema da YouCanBookMe dispara um POST request para o n
 
 <a  id="tecnologias-utilizadas"></a>
 
-## :rocket: Tecnologias Utilizadas
+## :rocket: - Tecnologias Utilizadas
 
 ### Banco de dados
 
@@ -41,7 +41,7 @@ Para compilarmos os dados e mostrarmos para tomados de decisão, criamos um app 
 
 <a  id="arquivos"></a>
 
-## :pencil: Arquivos
+## :pencil: - Arquivos
 
 ### Whatsapp.gs
 
@@ -101,7 +101,7 @@ QRCodeAPI retorna a URL da imagem do QRCode referente às informações colhidas
 
 <a  id="apis"></a>
 
-## :wrench: Serviços Integrados
+## :wrench: - Serviços Integrados
 
 ### Google Spreadsheets
 

@@ -140,8 +140,13 @@ Para tornar os links enviados aos caminhoneiros mais amigáveis, utilizamos o en
 ## :construction_worker: Time
 
 [Éfrem](https://efrem.io/cv)
+
 [Fraps](https://www.linkedin.com/in/matheus-rosendo-pedreira-65995698/)
+
 [Ami](https://www.linkedin.com/in/ami-aram/)
+
 [Six](https://www.linkedin.com/in/alex-souza-six/)
+
 [Isa](https://www.linkedin.com/in/isabella-gutierres-3142131a3/)
+
 

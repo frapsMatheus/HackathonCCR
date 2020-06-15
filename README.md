@@ -29,7 +29,7 @@ Ao marcar a consulta, o sistema da YouCanBookMe dispara um POST request para o n
 
 <a  id="tecnologias-utilizadas"></a>
 
-## :rocket: - Tecnologias Utilizadas
+## :rocket: Tecnologias Utilizadas
 
 ### Banco de dados
 

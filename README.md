@@ -137,6 +137,8 @@ QRServer foi utilizado para condensar todas as informações referentes à triag
 
 Para tornar os links enviados aos caminhoneiros mais amigáveis, utilizamos o encurtador de links Relink.
 
+<a  id="time"></a>
+
 ## :construction_worker: Time
 
 [Éfrem](https://efrem.io/cv)

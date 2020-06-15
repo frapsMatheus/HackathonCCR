@@ -32,7 +32,7 @@ Como descrito, nosso banco de dados foi desenvolvido utilizando uma planilha do 
 
 ### Dashboard
 
-Para compilarmos os dados e mostrarmos para tomados de decisão, criamos um app PWA com dashboard para acompanhamento dos dados que são levantados a partir do preenchimento dos formulários de cadastro e triagem. Para acessar o app: [https://hackathon-ccr.glideapp.io/full](https://hackathon-ccr.glideapp.io/full)
+Para compilarmos os dados e mostrarmos para tomados de decisão, criamos um app com dashboard para acompanhamento dos dados que são levantados a partir do preenchimento dos formulários de cadastro e triagem. Para acessar o app: [https://hackathon-ccr.glideapp.io/full](https://hackathon-ccr.glideapp.io/full)
 
 <a  id="arquivos"></a>
 

@@ -1,4 +1,4 @@
-# Zap na Estrada
+# Zap na Estrada - Time #384
 
 <div align="center">
   <img alt="Logo" title="#logo" width="300px" src="logo.png">
@@ -16,6 +16,8 @@ Saúde e bem-estar por meio da dinâmica de comunidade para criar o maior canal 
 - [Arquivos](#arquivos)
 
 - [Serviços Integrados (APIs)](#apis)
+
+- [Time](#time)
 
 <a  id="sobre"></a>
 
@@ -134,3 +136,12 @@ QRServer foi utilizado para condensar todas as informações referentes à triag
 ### Relink
 
 Para tornar os links enviados aos caminhoneiros mais amigáveis, utilizamos o encurtador de links Relink.
+
+## :construction_worker: Time
+
+[Éfrem](https://efrem.io/cv)
+[Fraps](https://www.linkedin.com/in/matheus-rosendo-pedreira-65995698/)
+[Ami](https://www.linkedin.com/in/ami-aram/)
+[Six](https://www.linkedin.com/in/alex-souza-six/)
+[Isa](https://www.linkedin.com/in/isabella-gutierres-3142131a3/)
+
